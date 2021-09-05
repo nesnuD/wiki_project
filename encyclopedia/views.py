@@ -45,4 +45,5 @@ def search_encyclopedia(request):
                 "searched" : searched 
             })
 
+#why my shit no working?
 
