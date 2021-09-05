@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %} 
+    Search Results
+{% endblock %}
+
+{% block nav %} 
+{% endblock %}
+
+{% block body %}
+    <center>
+        {% if searched %}
+            <h1 id="result">Results for: {{ searched }}</h1>
+            <dl>
+                <li>{{ entry }}</li>
+            </dl>
+        {% else %}
+            <h1>Please use the search bar</h1>
+        {% endif %}
+    </center>
+    
+{% endblock %}
