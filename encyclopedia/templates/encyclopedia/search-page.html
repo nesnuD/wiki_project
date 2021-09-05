@@ -12,7 +12,7 @@
         {% if searched %}
             <h1 id="result">Results for: {{ searched }}</h1>
             <dl>
-                <li>{{ entry }}</li>
+                <li><a href="{% url 'encyclopedia:get_page' title=entry %}">{{ entry }}</a></li>
             </dl>
         {% else %}
             <h1>Please use the search bar</h1>
