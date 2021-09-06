@@ -1,5 +1,5 @@
 from django import forms
 
 class entryForm(forms.Form):
-    title = forms.CharField()
-    content = forms.CharField()
+    title = forms.CharField(label="title")
+    content = forms.CharField(label="content")
