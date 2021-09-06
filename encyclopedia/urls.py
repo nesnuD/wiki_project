@@ -10,6 +10,7 @@ urlpatterns = [
     path("search", views.search_encyclopedia, name="search"),
     path("create_page", views.createpage, name="create_page"),
     path("wiki/<str:title>", views.show_page, name="get_page"),
+    path("kekW", views.randompage, name="random")
 
 ]
 

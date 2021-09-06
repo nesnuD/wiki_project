@@ -7,6 +7,7 @@ import re
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django import forms
+import random
 
 import encyclopedia
 
@@ -76,3 +77,11 @@ def createpage(request):
         })
     
 
+def randompage(request):
+    entries = util.list_entries()
+    title = random.choice(entries)
+    page_info = util.get_entry(title)
+    return render(request, "encyclopedia/title.html", {
+        "title" : title,
+        "info" : page_info
+    })
