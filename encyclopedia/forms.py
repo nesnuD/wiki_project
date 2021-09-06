@@ -1,4 +1,5 @@
 from django import forms
 
-class SearchForm(forms.Form):
-    search = forms.CharField(label="search")
+class entryForm(forms.Form):
+    title = forms.CharField()
+    content = forms.CharField()

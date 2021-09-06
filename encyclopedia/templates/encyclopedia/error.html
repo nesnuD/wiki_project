@@ -1,8 +1,9 @@
 {% extends "encyclopedia/layout.html" %}
 
-{% blocktitle %}Page Not Found!{% endblock %}
+{% block title %}Page Not Found!{% endblock %}
 
-{% blockbody %}
+{% block body %}
     <h1>Page Not Found!</h1>
     <h4>Did You Enter a Proper url></h4>
+    <h4>{{ error }}</h4>
 {% endblock %}
