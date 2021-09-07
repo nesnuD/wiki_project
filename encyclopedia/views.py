@@ -2,7 +2,7 @@ from django.forms.forms import Form
 from django.http.response import HttpResponseRedirect
 from encyclopedia.forms import entryForm
 from django.shortcuts import render
-from . import util
+from . import util, forms
 import re
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
@@ -18,12 +18,18 @@ def index(request):
 
 def show_page(request, title):
     page_info = util.get_entry(title)
+    edit_btn = forms.Form(forms.BooleanField(label="Edit", required="False"))
     if show_page is None:
-        return render(request, "encyclopedia/error.html")
+        if edit_btn == True:
+            return render(request, "encyclopedia/createpage.html")
+        else:
+            return render(request, "encyclopedia/error.html")
     return render(request, "encyclopedia/title.html", {
         "info" : page_info,
         "title" : title,  
+        "btn" : edit_btn
     })
+
 
 
 def search_encyclopedia(request):
